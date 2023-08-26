@@ -1,0 +1,11 @@
+<div style="border: solid black 2px; border-radius: 10px; margin: 100px 400px; height: 50vh;padding: 20px; background-color: aqua; padding-top: 200px;">
+    <form [formGroup]="deckForm" style="display: flex; flex-direction: column; align-items: center; justify-content: center;" (submit)="generateDecks()">
+        <label for="decknumber">Select the number of decks:</label>
+        <div>
+            <select formControlName="decknumber" id="decknumber">
+                <option *ngFor="let number of numberOption" value="{{number}}">{{number}}</option>
+            </select>
+            <button style="margin: 0 10px;" type="submit">Create Decks</button>
+        </div>
+    </form>
+</div>

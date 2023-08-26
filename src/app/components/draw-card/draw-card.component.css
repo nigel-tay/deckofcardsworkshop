@@ -1,0 +1,14 @@
+.big_red_button_enabled {
+    background-color: red;
+}
+
+.big_red_button_enabled:hover {
+    cursor: pointer;
+    border-color: (228, 74, 100);
+    background-color: rgb(228, 74, 100);
+}
+
+.big_red_button_disabled {
+    background-color: red;
+    opacity: 50%;
+}

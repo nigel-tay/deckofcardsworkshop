@@ -1,0 +1,14 @@
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h1>Cards left: {{cardsLeft}}</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px">
+        <input type="text" placeholder="Enter the number of cards to draw" #cardNumberInput>
+        <button [disabled]="cardsLeft === 0 || disableButton" style="margin-left: 20px" class="{{disableButton ? 'big_red_button_disabled' : 'big_red_button_enabled'}}" (click)="handleClick()" style="border: solid red 1px; color: black; border-radius: 50%; width: 200px; height: 200px; text-align: center; display: flex; justify-content: center; align-items: center;">DRAW CARDS</button>
+    </div>
+    <button [routerLink]="'/home'" style="margin-top: 20px;">GO BACK TO GENERATING DECKS</button>
+    <div *ngIf="cardsArray.length" style="display: flex; justify-content: center; align-items: center; border: solid black 1px; border-radius: 15px; width: 80vw; flex-wrap: wrap;">
+        <div *ngFor="let card of cardsArray" class="card-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10px 10px;">
+            <img src="{{card.image}}" alt="Some card image" style="width: 100px;">
+            <h2>{{card.name}}</h2>
+        </div>
+    </div>
+</div>
